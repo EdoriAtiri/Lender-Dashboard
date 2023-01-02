@@ -63,6 +63,10 @@
         display: flex;
         align-items: center;
         padding-left: 16px;
+
+        &.password {
+          padding-right: 75px;
+        }
       }
 
       input::placeholder {
@@ -89,15 +93,21 @@
           background: none;
           border: none;
           outline: none;
+          cursor: pointer;
         }
       }
 
-      span {
+      .forgot {
         font-weight: 600;
         font-size: 12px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: $lend-blue;
+        background: none;
+        border: none;
+        outline: none;
+        width: fit-content;
+        cursor: pointer;
       }
 
       .submit {
@@ -109,6 +119,12 @@
         border-radius: 8px;
         border: none;
         outline: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:active {
+          transform: scale(0.99);
+        }
       }
     }
   }
