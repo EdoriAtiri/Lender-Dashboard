@@ -11,16 +11,14 @@ function Login() {
 
   return (
     <div className={style.login}>
-      <header>
+      <header className={style.header}>
         <img className={style.logo} src={logo} alt="lendsqr Logo" />
-        <figure className={style.art}>
-          <img src={BgImg} alt="" aria-hidden="true" />
-        </figure>
+        <img className={style.art} src={BgImg} alt="" aria-hidden="true" />
       </header>
 
       <main className={style.main}>
         <h1>Welcome!</h1>
-        <span className={style.desc}>Enter details to login.</span>
+        <span className={style.desc}>Enter details to login</span>
         <form>
           <input
             type="email"
