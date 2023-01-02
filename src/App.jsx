@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import './App.scss'
+import style from './App.module.scss'
 import Login from './Pages/Login'
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className={style.app}>
         <Routes>
           <Route path="/" element={<Login />} />
         </Routes>

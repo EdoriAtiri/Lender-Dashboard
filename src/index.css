@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Avenir';
+  src: url('./assets/Fonts/avenir-next/AvenirNextLTPro-Bold.ttf')
+    format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('./assets/Fonts/avenir-next/AvenirNextLTPro-Regular.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {

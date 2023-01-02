@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './index.module.scss'
-import logo from '../../assets/SVG/LendsqrLogo.svg'
-import BgImg from '../../assets/SVG/LoginBg.svg'
+import logo from '../../assets/Images/SVG/LendsqrLogo.svg'
+import BgImg from '../../assets/Images/SVG/LoginBg.svg'
 function Login() {
   return (
     <div className={style.login}>
@@ -14,12 +14,21 @@ function Login() {
 
       <main className={style.main}>
         <h1>Welcome!</h1>
-        <span>Enter details to login.</span>
+        <span className={style.desc}>Enter details to login.</span>
         <form>
-          <input type="email" name="email" id="email" />
-          <input type="password" name="password" id="password" />
+          <input type="email" name="email" id="email" placeholder="Email" />
+          <div className={style.pass__container}>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
+            <button className={style.show__pass}>Show</button>
+          </div>
+
           <span>Forgot password?</span>
-          <button>LOG IN</button>
+          <button className={style.submit}>LOG IN</button>
         </form>
       </main>
     </div>
