@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .login {
   display: flex;
   gap: 69px;
@@ -32,5 +34,12 @@
     padding-top: 220px;
     padding-left: 100px;
     padding-right: 157px;
+
+    h1 {
+      color: $base-color;
+      font-weight: 700;
+      font-size: 40px;
+      letter-spacing: -0.04em;
+    }
   }
 }
