@@ -43,7 +43,7 @@
       }
     }
 
-    button {
+    .search__desktop {
       width: 56px;
       height: 40px;
       display: grid;
@@ -52,6 +52,10 @@
       border: 1px solid rgb(33, 63, 125, 0.2);
       border-radius: 0 8px 8px 0;
       cursor: pointer;
+    }
+
+    .search__mobile {
+      display: none;
     }
   }
 
@@ -103,5 +107,142 @@
         color: $base-color;
       }
     }
+  }
+}
+
+@media (max-width: 1520px) {
+  .container {
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .logo,
+    .search {
+      margin-right: 0;
+    }
+
+    .header__end {
+      gap: 15px;
+
+      a,
+      .bell,
+      figure {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .logo {
+      width: 100px;
+    }
+
+    .search {
+      input {
+        width: 300px;
+      }
+
+      .search__desktop {
+        width: 48px;
+      }
+    }
+
+    .header__end {
+      gap: 15px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .logo {
+      width: 100px;
+    }
+
+    .search {
+      input {
+        width: 200px;
+      }
+
+      .search__desktop {
+        width: 38px;
+      }
+    }
+
+    .header__end {
+      gap: 10px;
+
+      a,
+      button > span {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    justify-content: space-between;
+    gap: 20px;
+    height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .search {
+      width: 100%;
+      .search__desktop {
+        width: 56px;
+        height: 40px;
+        display: grid;
+        place-content: center;
+        background-color: $lend-blue;
+        border: 1px solid rgb(33, 63, 125, 0.2);
+        border-radius: 0 8px 8px 0;
+        cursor: pointer;
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+
+    .search__mobile,
+    .back__btn {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-content: center;
+      background-color: $lend-blue;
+      border: 1px solid rgb(33, 63, 125, 0.2);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .back__btn {
+      width: 56px;
+      height: 40px;
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 601px) {
+  .search__mobile,
+  .back__btn {
+    display: none;
   }
 }
