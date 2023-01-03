@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import style from './index.module.scss'
+import style from './Login.module.scss'
 import logo from '../../assets/Images/SVG/LendsqrLogo.svg'
 import BgImg from '../../assets/Images/SVG/LoginBg.svg'
+
 function Login() {
   const [passwordIsVisible, setPasswordIsVisible] = useState(false)
 
@@ -11,10 +12,10 @@ function Login() {
 
   return (
     <div className={style.login}>
-      <header className={style.header}>
+      <section className={style.header}>
         <img className={style.logo} src={logo} alt="lendsqr Logo" />
         <img className={style.art} src={BgImg} alt="" aria-hidden="true" />
-      </header>
+      </section>
 
       <main className={style.main}>
         <h1>Welcome!</h1>

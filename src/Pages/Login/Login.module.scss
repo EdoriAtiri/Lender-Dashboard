@@ -5,7 +5,7 @@
   gap: 69px;
   font-family: 'Avenir', sans-serif;
 
-  header {
+  .header {
     display: flex;
     flex-direction: column;
     gap: 139px;
@@ -130,7 +130,7 @@
     gap: 50px;
     justify-content: space-around;
 
-    header {
+    .header {
       padding-left: 20px;
     }
 
@@ -145,7 +145,7 @@
   .login {
     gap: 20px;
 
-    header {
+    .header {
       padding-top: 80px;
     }
 
@@ -182,7 +182,7 @@
     gap: 25px;
     padding: 25px;
 
-    header {
+    .header {
       padding: 0;
 
       .art {
