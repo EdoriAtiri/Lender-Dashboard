@@ -4,11 +4,13 @@ import style from './App.module.scss'
 import Login from './Pages/Login/Login'
 import Dashboard from './Pages/Dashboard/Dashboard'
 import Users from './Pages/Users/Users'
+import Header from './Partials/Header/Header'
 
 function App() {
   return (
     <Router>
       <div className={style.app}>
+        <Header />
         <Routes>
           <Route path="/" element={<Dashboard />}>
             <Route index element={<Users />} />
