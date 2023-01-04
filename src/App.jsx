@@ -9,7 +9,10 @@ function App() {
     <Router>
       <div className={style.app}>
         <Routes>
-          <Route path="/" element={<Dashboard />}></Route>
+          <Route path="/" element={<Dashboard />}>
+            <Route index element={<Users />} />
+            <Route path="users" element={<Users />} />
+          </Route>
           <Route path="/login" element={<Login />} />
         </Routes>
       </div>
