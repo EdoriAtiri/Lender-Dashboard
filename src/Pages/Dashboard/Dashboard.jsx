@@ -7,6 +7,7 @@ function Dashboard() {
   return (
     <div className={style.container}>
       <Header />
+      <SideBar />
     </div>
   )
 }

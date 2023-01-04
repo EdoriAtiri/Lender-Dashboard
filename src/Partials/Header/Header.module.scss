@@ -1,7 +1,7 @@
 @import '../../variables.scss';
 
 .container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,6 +13,7 @@
   padding-right: 66.33px;
   background: #ffffff;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  z-index: 20;
 
   .logo {
     width: 144.8px;

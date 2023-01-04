@@ -36,6 +36,7 @@ html {
 
 body {
   min-height: 100vh;
+  /* overflow: hidden; */
 }
 
 img,
@@ -44,4 +45,10 @@ svg,
 video {
   display: block;
   max-width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
 }
