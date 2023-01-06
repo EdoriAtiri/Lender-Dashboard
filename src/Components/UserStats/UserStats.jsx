@@ -4,6 +4,7 @@ import style from './UserStats.module.scss'
 function UserStats() {
   return (
     <div className={style.container}>
+      <img src="kl" alt="" />
       <table>
         <tbody>
           <th scope="col">Users</th>
