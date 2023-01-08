@@ -1,14 +1,16 @@
 import React from 'react'
 import style from './UserStats.module.scss'
 
-function UserStats() {
+function UserStats({ icon, stat, value }) {
   return (
     <div className={style.container}>
-      <img src="kl" alt="" />
+      <figure>
+        <img src={icon} alt={stat} />
+      </figure>
       <table>
         <tbody>
-          <th scope="col">Users</th>
-          <td>2453</td>
+          <th scope="col">{stat}</th>
+          <td>{value}</td>
         </tbody>
       </table>
     </div>

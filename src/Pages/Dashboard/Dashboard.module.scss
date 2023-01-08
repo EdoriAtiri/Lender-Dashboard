@@ -1,4 +1,10 @@
 .container {
   position: relative;
-  background: #e5e5e5;
+
+  .outlet {
+    position: absolute;
+    left: 343px;
+    top: 160px;
+    width: 1037px;
+  }
 }

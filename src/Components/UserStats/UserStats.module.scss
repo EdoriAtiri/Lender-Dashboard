@@ -12,6 +12,20 @@
   border-radius: 4px;
   padding: 20px 30px 30px;
 
+  figure {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+
+    img {
+      max-width: 22px;
+      height: auto;
+    }
+  }
+
   table {
     tbody {
       display: flex;

@@ -1,10 +1,9 @@
 @import '../../variables.scss';
 
 .container {
-  position: absolute;
-  left: 343px;
-  top: 160px;
   font-family: $primary-font;
+  background: #e5e5e5;
+  width: 100%;
   // margin-right: 60px;
 
   h1 {
@@ -12,5 +11,23 @@
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 40px;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+
+    figure:nth-of-type(1) {
+      background: rgb(223, 24, 255, 0.1);
+    }
+    figure:nth-of-type(2) {
+      background: rgb(87, 24, 255, 0.1);
+    }
+    figure:nth-of-type(3) {
+      background: rgb(245, 95, 68, 0.1);
+    }
+    figure:nth-of-type(4) {
+      background: rgb(255, 51, 102, 0.1);
+    }
   }
 }

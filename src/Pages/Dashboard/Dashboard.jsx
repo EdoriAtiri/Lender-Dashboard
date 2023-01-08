@@ -7,7 +7,9 @@ function Dashboard() {
   return (
     <div className={style.container}>
       <SideBar />
-      <Outlet />
+      <div className={style.outlet}>
+        <Outlet />
+      </div>
     </div>
   )
 }
