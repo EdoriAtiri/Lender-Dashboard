@@ -4,17 +4,20 @@
   font-family: $primary-font;
   background: #e5e5e5;
   width: 100%;
-  // margin-right: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: auto;
 
   h1 {
+    display: none;
     color: $base-color;
     font-size: 24px;
     font-weight: 500;
-    margin-bottom: 40px;
   }
 
   .stats {
-    display: flex;
+    display: none; //flex
     justify-content: space-between;
 
     figure:nth-of-type(1) {
@@ -28,6 +31,83 @@
     }
     figure:nth-of-type(4) {
       background: rgb(255, 51, 102, 0.1);
+    }
+  }
+
+  .user__table {
+    .table {
+      display: flex;
+      flex-direction: column;
+      width: 100%; //1037px
+      max-height: 910px;
+      background: #ffffff;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      padding: 30px 30px 7px;
+
+      .table__header {
+        display: flex;
+        gap: 35px;
+        margin-bottom: 25px;
+
+        th {
+          button {
+            display: flex;
+            gap: 10px;
+            color: $primary-color;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+
+          &:last-of-type {
+            padding-right: 55px;
+          }
+        }
+      }
+
+      .table__item {
+        display: flex;
+        border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+        gap: 35px;
+
+        td {
+          font-size: 14px;
+          color: $primary-color;
+          padding-bottom: 23px;
+          padding-top: 23px;
+        }
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .organization,
+    .data__organization {
+      min-width: 116px;
+    }
+    .username,
+    .data__username {
+      min-width: 106px;
+    }
+    .email,
+    .data__email {
+      min-width: 147px;
+    }
+    .phone,
+    .data__phone {
+      min-width: 124px;
+    }
+    .date,
+    .data__date {
+      min-width: 151px;
+    }
+    .status,
+    .data__status {
+      min-width: 100px;
     }
   }
 }
