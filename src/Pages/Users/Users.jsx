@@ -51,22 +51,48 @@ function Users() {
       })
   }, [])
 
+  useEffect(() => {
+    const usersCount = users.length
+    const activeUsers = users.filter((user) => {
+      const lastActiveYear = new Date(user.lastActiveDate).getFullYear()
+      const currentYear = new Date().getFullYear()
+      return lastActiveYear >= currentYear
+    }).length
+    const usersWithLoans = users.filter(
+      (user) => parseInt(user.education.loanRepayment) > 0
+    ).length
+    const usersWithSavings = users.filter(
+      (user) => parseInt(user.accountBalance) > 0
+    ).length
+
+    setStats({
+      usersCount,
+      activeUsers,
+      usersWithLoans,
+      usersWithSavings,
+    })
+  }, [users])
+
   return (
     <div className={style.container}>
       <h1>Users</h1>
 
       <section className={style.stats} aria-label="User Stats">
-        <UserStats icon={UserCount} stat={'Users'} value={'2,453'} />
-        <UserStats icon={ActiveUsers} stat={'Active Users'} value={'2,453'} />
+        <UserStats icon={UserCount} stat={'Users'} value={stats.usersCount} />
+        <UserStats
+          icon={ActiveUsers}
+          stat={'Active Users'}
+          value={stats.activeUsers}
+        />
         <UserStats
           icon={UserLoans}
           stat={'Users with loans'}
-          value={'12,453'}
+          value={stats.usersWithLoans}
         />
         <UserStats
           icon={UserSavings}
           stat={'Users with savings'}
-          value={'102,453'}
+          value={stats.usersWithSavings}
         />
       </section>
 
