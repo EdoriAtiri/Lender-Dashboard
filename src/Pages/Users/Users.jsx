@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './Users.module.scss'
 import UserStats from '../../Components/UserStats/UserStats'
 import UserCount from '../../assets/Images/SVG/UserStats/UserCount.svg'
@@ -9,6 +9,48 @@ import FilterIcon from '../../assets/Images/SVG/Filter.svg'
 import Menu from '../../assets/Images/SVG/ThreeDotMenu.svg'
 
 function Users() {
+  const [users, setUsers] = useState([])
+  const [stats, setStats] = useState({
+    usersCount: '',
+    activeUsers: '',
+    usersWithLoans: '',
+    usersWithSavings: '',
+  })
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(true)
+
+  function processUsersStats() {
+    const userslength = users.length
+    const activeUsers = users.filter((user) => {
+      const lastActiveYear = new Date(user.lastActiveDate).getFullYear()
+      const currentYear = new Date().getFullYear()
+
+      return lastActiveYear >= currentYear
+    })
+    console.log(activeUsers)
+  }
+
+  useEffect(() => {
+    fetch('https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users')
+      .then((response) => {
+        if (response.ok) {
+          return response.json()
+        }
+        throw response
+      })
+      .then((data) => {
+        console.log(data)
+        setUsers(data)
+      })
+      .catch((error) => {
+        console.error('Error fetching users data', error)
+        setError(error)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }, [])
+
   return (
     <div className={style.container}>
       <h1>Users</h1>
@@ -69,7 +111,7 @@ function Users() {
             </th>
           </tr>
 
-          <div className={style.table__item_container}>
+          <tbody className={style.table__item_container}>
             <tr className={style.table__item}>
               <td className={style.data__organization}>Lendsqr</td>
               <td className={style.data__username}>Adedeji</td>
@@ -81,7 +123,7 @@ function Users() {
                 <img src={Menu} alt="menu " />
               </button>
             </tr>
-          </div>
+          </tbody>
         </table>
       </section>
     </div>

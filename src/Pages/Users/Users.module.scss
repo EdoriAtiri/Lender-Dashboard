@@ -79,8 +79,9 @@
           padding-top: 23px;
         }
 
-        &:last-of-type {
-          border-bottom: none;
+        button {
+          padding: 0 4px;
+          cursor: pointer;
         }
       }
     }
