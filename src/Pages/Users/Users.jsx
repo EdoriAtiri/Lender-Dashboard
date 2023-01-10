@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import style from './Users.module.scss'
 import UserStats from '../../Components/UserStats/UserStats'
-
+import Pagination from '../../Components/Pagination/Pagination'
 import FilterIcon from '../../assets/Images/SVG/Filter.svg'
 import Menu from '../../assets/Images/SVG/ThreeDotMenu.svg'
 
@@ -155,6 +155,8 @@ function Users() {
           </tbody>
         </table>
       </section>
+
+      <Pagination usersPerPage={usersPerPage} totalUsers={stats.usersCount} />
     </div>
   )
 }
