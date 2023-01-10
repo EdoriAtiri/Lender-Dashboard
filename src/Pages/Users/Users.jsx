@@ -15,6 +15,8 @@ function Users() {
   })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [usersPerPage, setUsersPerPage] = useState(9)
 
   function processUsersStats() {
     const userslength = users.length
@@ -69,6 +71,11 @@ function Users() {
       usersWithSavings,
     })
   }, [users])
+
+  // Get current posts
+  const indexOfLastUser = currentPage * usersPerPage
+  const indexOfFirstUser = indexOfLastUser - usersPerPage
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser)
 
   return (
     <div className={style.container}>
@@ -128,7 +135,7 @@ function Users() {
 
           <tbody className={style.table__item_container}>
             {users &&
-              users.map((user) => (
+              currentUsers.map((user) => (
                 <tr key={user.id} className={style.table__item}>
                   <td className={style.data__organization}>{user.orgName}</td>
                   <td className={style.data__username}>{user.userName}</td>
