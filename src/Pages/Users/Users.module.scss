@@ -16,24 +16,6 @@
     font-weight: 500;
   }
 
-  .stats {
-    display: flex; //flex
-    justify-content: space-between;
-
-    figure:nth-of-type(1) {
-      background: rgb(223, 24, 255, 0.1);
-    }
-    figure:nth-of-type(2) {
-      background: rgb(87, 24, 255, 0.1);
-    }
-    figure:nth-of-type(3) {
-      background: rgb(245, 95, 68, 0.1);
-    }
-    figure:nth-of-type(4) {
-      background: rgb(255, 51, 102, 0.1);
-    }
-  }
-
   .user__table {
     .table {
       display: flex;
@@ -69,14 +51,19 @@
 
       .table__item {
         display: flex;
+        align-items: center;
         border-bottom: 1px solid rgba(33, 63, 125, 0.1);
         gap: 35px;
+        padding-bottom: 23px;
+        padding-top: 23px;
 
         td {
           font-size: 14px;
           color: $primary-color;
-          padding-bottom: 23px;
-          padding-top: 23px;
+          height: 46px;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
         }
 
         button {
