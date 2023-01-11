@@ -164,13 +164,15 @@ function Users() {
         </table>
       </section>
 
-      <Pagination
-        usersPerPage={usersPerPage}
-        totalUsers={stats.usersCount}
-        paginate={paginate}
-        next={nextPage}
-        prev={prevPage}
-      />
+      <section aria-label="Pagination" className={style.page__nav}>
+        <Pagination
+          usersPerPage={usersPerPage}
+          totalUsers={stats.usersCount}
+          paginate={paginate}
+          next={nextPage}
+          prev={prevPage}
+        />
+      </section>
     </div>
   )
 }
