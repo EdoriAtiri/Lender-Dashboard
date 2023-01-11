@@ -1,9 +1,42 @@
+@import '../../variables.scss';
+
 .nav {
+  display: flex;
+  gap: 20px;
+
+  .prev,
+  .next {
+    display: grid;
+    place-content: center;
+    height: 24px;
+    width: 24px;
+    background: rgba(33, 63, 125, 0.1);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .disable {
+    opacity: 60%;
+    cursor: unset;
+  }
+
+  .next {
+    transform: rotate(180deg);
+  }
   .pagination {
     display: flex;
+    gap: 20px;
 
-    li {
-      list-style: none;
+    button {
+      font-family: $primary-font;
+      font-size: 16px;
+      color: $primary-color;
+      opacity: 60%;
+      cursor: pointer;
+    }
+
+    .current__page {
+      opacity: 100%;
     }
   }
 }

@@ -38,7 +38,6 @@ function Users() {
         throw response
       })
       .then((data) => {
-        console.log(data)
         setUsers(data)
       })
       .catch((error) => {
@@ -76,6 +75,15 @@ function Users() {
   const indexOfLastUser = currentPage * usersPerPage
   const indexOfFirstUser = indexOfLastUser - usersPerPage
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser)
+
+  // Change Page
+  function paginate(pageNumber) {
+    setCurrentPage(pageNumber)
+  }
+
+  // Next
+  const nextPage = () => setCurrentPage(currentPage + 1)
+  const prevPage = () => setCurrentPage(currentPage - 1)
 
   return (
     <div className={style.container}>
@@ -156,7 +164,13 @@ function Users() {
         </table>
       </section>
 
-      <Pagination usersPerPage={usersPerPage} totalUsers={stats.usersCount} />
+      <Pagination
+        usersPerPage={usersPerPage}
+        totalUsers={stats.usersCount}
+        paginate={paginate}
+        next={nextPage}
+        prev={prevPage}
+      />
     </div>
   )
 }
