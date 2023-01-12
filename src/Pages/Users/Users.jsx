@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import style from './Users.module.scss'
 import UserStats from '../../Components/UserStats/UserStats'
 import Pagination from '../../Components/Pagination/Pagination'
+import Filter from '../../Components/Filter/Filter'
 import FilterIcon from '../../assets/Images/SVG/Filter.svg'
 import Menu from '../../assets/Images/SVG/ThreeDotMenu.svg'
 
@@ -99,6 +100,7 @@ function Users() {
       </section>
 
       <section className={style.user__table} aria-label="Users data table">
+        <Filter />
         <table className={style.table}>
           <thead>
             <tr className={style.table__header}>
