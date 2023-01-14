@@ -8,4 +8,20 @@
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
   position: absolute;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .filter__method {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .filter__actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 10px;
+  }
 }
